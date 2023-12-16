@@ -117,11 +117,31 @@ public class WebTablePage {
 	// 4. Print even row data in table
 	public void PrintEvenRowData() {
 
+		List<WebElement> evenDatas = LocatorToElements(driver, evenrow);
+		System.out.println("Even Row Data:");
+
+		for (WebElement evenData : evenDatas) {
+			
+			System.out.println(evenData.getText());
+			System.out.println("------------");
+
+		}
+
 	}
 
 	// 5. Print Odd row data in table
 	public void PrintOddRowData() {
 
+		List<WebElement> oddDatas = LocatorToElements(driver, oddrow);
+		System.out.println("Odd Row Data:");
+
+		for (WebElement data : oddDatas) {
+
+			System.out.println(data.getText());
+			System.out.println("-----------");
+
+		}
+		System.out.println("*************************************************************");
 	}
 
 	// 6. Printing First name in Alpahabetic order and assert
@@ -143,6 +163,7 @@ public class WebTablePage {
 		Collections.sort(listfn);
 
 		System.out.println("After Sorting Fname:  " + listfn.toString());
+		System.out.println("****************************************************************");
 
 	}
 
@@ -162,10 +183,11 @@ public class WebTablePage {
 
 		System.out.println("Highest Age: " + Collections.max(agearr));
 		System.out.println("Lowest Age: " + Collections.min(agearr));
+		System.out.println("****************************************************************");
 
 	}
 
-	//8. Fetching Records based on Highest Age
+	// 8. Fetching Records based on Highest Age
 	public void FetchRecordsHighestage() {
 		// Age is in the third column of each row
 		int ageIndex = 0;
@@ -193,5 +215,36 @@ public class WebTablePage {
 		}
 		System.out.println("Highest Age Record: ");
 		System.out.println(recordWithHighAge.getText());
+		System.out.println("****************************************************************");
+	}
+
+	// 9. Fetching records based on Lowest Salary
+	public void FetchRecordLowestSalary() {
+
+		int salaryIndex = 0;
+		int lowestsalary = 0;
+		WebElement salaryRecord = null;
+
+		List<WebElement> rows = LocatorToElements(driver, rowsentry);
+		System.out.println("No of Record Entred: " + rows.size());
+
+		for (WebElement row : rows) {
+			System.out.println(row.getText());
+			System.out.println("*********");
+
+			String sal = row.findElements(salary).get(salaryIndex).getText();
+			int sentry = Integer.parseInt(sal);
+
+			if (sentry > lowestsalary) {
+				sentry = lowestsalary;
+				salaryRecord = row;
+
+			}
+			salaryIndex++;
+		}
+
+		System.out.println("Record with Lowest Salary: ");
+		System.out.println(salaryRecord.getText());
+		System.out.println("****************************************************************");
 	}
 }

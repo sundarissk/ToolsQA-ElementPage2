@@ -29,9 +29,12 @@ public class WebTableTC extends BrowserSetUp {
 
 		mp.ElementPageClick();
 		epe.WebTableClick();
-		wtp.SortingFnamecellData();
-		wtp.AgeHighestRecords();
-		wtp.FetchRecordsHighestage();
+		//wtp.SortingFnamecellData();
+		//wtp.AgeHighestRecords();
+		//wtp.FetchRecordsHighestage();
+		//wtp.FetchRecordLowestSalary();
+		wtp.PrintOddRowData();
+		wtp.PrintEvenRowData();
 
 	}
 
