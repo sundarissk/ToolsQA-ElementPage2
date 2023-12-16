@@ -14,7 +14,6 @@ public class WebTableTC extends BrowserSetUp {
 	MainPage mp;
 	ElementPageElements epe;
 	WebTablePage wtp;
-	
 
 	@BeforeTest
 	public void SetUpPage() {
@@ -31,6 +30,8 @@ public class WebTableTC extends BrowserSetUp {
 		mp.ElementPageClick();
 		epe.WebTableClick();
 		wtp.SortingFnamecellData();
+		wtp.AgeHighestRecords();
+		wtp.FetchRecordsHighestage();
 
 	}
 

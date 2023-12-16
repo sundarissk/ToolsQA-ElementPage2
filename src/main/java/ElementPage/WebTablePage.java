@@ -1,15 +1,18 @@
 package ElementPage;
 
-
+import static UtilityPackage.ElementUtil.LocatorToElements;
 import static UtilityPackage.FunctionsUtil.ElementToText;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
+import UtilityPackage.ElementUtil;
 
 public class WebTablePage {
 
@@ -49,6 +52,8 @@ public class WebTablePage {
 	// Age colume
 	static final By age = By.xpath("//div[@class='rt-tr -even' or @class = 'rt-tr -odd']//div[@class='rt-td'][3]");
 
+	static final By cage = By.xpath("//div[@class='rt-tr -even' or @class = 'rt-tr -odd']//div[@class='rt-td']");
+
 	// First Name Column Data
 	static final By fname = By.xpath("//div[@class='rt-tr -even' or @class = 'rt-tr -odd']//div[@class='rt-td'][1]");
 
@@ -65,7 +70,7 @@ public class WebTablePage {
 	static final By celldatainpage = By.xpath("//div[@class='rt-tr -odd' ]//div[@class='rt-td']");
 
 	static final By celldataentry = By
-			.xpath("//div[@class='rt-tr -even' or @class = 'rt-tr -odd']//div[@class='rt-td']");
+			.xpath("//div[@class='rt-tr -even' or @class = 'rt-tr -odd']//div[@class='rt-td'][3]");
 	static final By tdata = By.xpath("//div[@role='rowgroup']//div[@class='rt-td']");
 
 	// nth cellvalue by row and cloumn number
@@ -126,7 +131,7 @@ public class WebTablePage {
 
 		List<WebElement> lele = driver.findElements(fname);
 		int c = lele.size();
-		System.out.println("No of records: " +c);
+		System.out.println("No of records: " + c);
 
 		for (WebElement ele : lele) {
 			String firstn = ElementToText(driver, ele);
@@ -141,4 +146,52 @@ public class WebTablePage {
 
 	}
 
+	// 7. Finding highest in age records
+	public void AgeHighestRecords() {
+
+		ArrayList<String> agearr = new ArrayList<String>();
+
+		List<WebElement> agea = LocatorToElements(driver, age);
+
+		for (WebElement eage : agea) {
+			String a = eage.getText();
+			agearr.add(a);
+
+		}
+		Collections.sort(agearr);
+
+		System.out.println("Highest Age: " + Collections.max(agearr));
+		System.out.println("Lowest Age: " + Collections.min(agearr));
+
+	}
+
+	//8. Fetching Records based on Highest Age
+	public void FetchRecordsHighestage() {
+		// Age is in the third column of each row
+		int ageIndex = 0;
+		int highestAge = 0;
+		WebElement recordWithHighAge = null;
+
+		// Find all rows in the web table
+		List<WebElement> rows = LocatorToElements(driver, rowsentry);
+		System.out.println("No of Records entered: " + rows.size());
+
+		// Initialize variables to store the highest age and corresponding record
+		for (WebElement row : rows) {
+			System.out.println(row.getText());
+			System.out.println("*********");
+
+			String agestr = row.findElements(age).get(ageIndex).getText();
+			int a = Integer.parseInt(agestr);
+
+			if (a > highestAge) {
+				highestAge = a;
+				recordWithHighAge = row;
+
+			}
+			ageIndex++;
+		}
+		System.out.println("Highest Age Record: ");
+		System.out.println(recordWithHighAge.getText());
+	}
 }
