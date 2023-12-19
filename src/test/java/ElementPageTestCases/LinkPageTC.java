@@ -28,7 +28,11 @@ public class LinkPageTC extends BrowserSetUp {
 
 		mp.ElementPageClick();
 		epe.LinkPageClick();
+
 		lp.createdClick();
+		lp.noContentClick();
+		lp.movedClick();
+		lp.badRequest();
 
 	}
 
@@ -36,4 +40,5 @@ public class LinkPageTC extends BrowserSetUp {
 	public void Closing() {
 		CloseDown();
 	}
+
 }

@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="ElementPageTestCases.ButtonPageTC">
+      <class name="ElementPageTestCases.LinkPageTC">
         <methods>
-          <include name="ButtonPageTcClickInAnyOrder"/>
-          <include name="Closing"/>
           <include name="setUpPage"/>
+          <include name="Closing"/>
+          <include name="LinkPageTestCases"/>
         </methods>
-      </class> <!-- ElementPageTestCases.ButtonPageTC -->
+      </class> <!-- ElementPageTestCases.LinkPageTC -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
