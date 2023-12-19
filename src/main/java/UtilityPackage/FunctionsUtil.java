@@ -36,6 +36,9 @@ public class FunctionsUtil {
 
 	}
 
-	
+	public static void PageRefresh(WebDriver driver) {
+		driver.navigate().refresh();
+
+	}
 
 }

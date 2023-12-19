@@ -2,24 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-12-16T16:55:31 EST" name="Default suite" finished-at="2023-12-16T16:55:36 EST" duration-ms="4689">
+  <suite started-at="2023-12-19T12:55:15 EST" name="Default suite" finished-at="2023-12-19T12:55:21 EST" duration-ms="5442">
     <groups>
     </groups>
-    <test started-at="2023-12-16T16:55:31 EST" name="Default test" finished-at="2023-12-16T16:55:36 EST" duration-ms="4689">
-      <class name="ElementPageTestCases.WebTableTC">
-        <test-method is-config="true" signature="SetUpPage()[pri:0, instance:ElementPageTestCases.WebTableTC@f5ac9e4]" started-at="2023-12-16T16:55:31 EST" name="SetUpPage" finished-at="2023-12-16T16:55:35 EST" duration-ms="3940" status="PASS">
+    <test started-at="2023-12-19T12:55:15 EST" name="Default test" finished-at="2023-12-19T12:55:21 EST" duration-ms="5442">
+      <class name="ElementPageTestCases.ButtonPageTC">
+        <test-method is-config="true" signature="setUpPage()[pri:0, instance:ElementPageTestCases.ButtonPageTC@f5ac9e4]" started-at="2023-12-19T12:55:15 EST" name="setUpPage" finished-at="2023-12-19T12:55:20 EST" duration-ms="4533" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SetUpPage -->
-        <test-method signature="WebTableTestCases()[pri:0, instance:ElementPageTestCases.WebTableTC@f5ac9e4]" started-at="2023-12-16T16:55:35 EST" name="WebTableTestCases" finished-at="2023-12-16T16:55:35 EST" duration-ms="368" status="PASS">
+        </test-method> <!-- setUpPage -->
+        <test-method signature="ButtonPageTcClickInAnyOrder()[pri:1, instance:ElementPageTestCases.ButtonPageTC@f5ac9e4]" started-at="2023-12-19T12:55:20 EST" name="ButtonPageTcClickInAnyOrder" finished-at="2023-12-19T12:55:21 EST" duration-ms="881" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- WebTableTestCases -->
-        <test-method is-config="true" signature="Closing()[pri:0, instance:ElementPageTestCases.WebTableTC@f5ac9e4]" started-at="2023-12-16T16:55:35 EST" name="Closing" finished-at="2023-12-16T16:55:36 EST" duration-ms="339" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Closing -->
-      </class> <!-- ElementPageTestCases.WebTableTC -->
+        </test-method> <!-- ButtonPageTcClickInAnyOrder -->
+      </class> <!-- ElementPageTestCases.ButtonPageTC -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

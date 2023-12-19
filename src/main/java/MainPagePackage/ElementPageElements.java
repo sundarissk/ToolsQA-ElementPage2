@@ -2,14 +2,14 @@ package MainPagePackage;
 
 import static UtilityPackage.ElementUtil.ElementClick;
 import static UtilityPackage.ElementUtil.Element_highlight;
-
 import static UtilityPackage.ElementUtil.ScrollToView;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import ElementPage.ButtonPage;
+import ElementPage.LinkPage;
 import ElementPage.WebTablePage;
-
 
 public class ElementPageElements {
 
@@ -34,8 +34,7 @@ public class ElementPageElements {
 
 		try {
 			Element_highlight(driver, webtable);
-			ScrollToView(driver, webtable); //Actions is not working in Toolsqa so used javaScript
-			
+			ScrollToView(driver, webtable); // Actions is not working in Toolsqa so used javaScript
 
 			ElementClick(driver, webtable);
 		} catch (Exception e) {
@@ -43,5 +42,30 @@ public class ElementPageElements {
 		}
 
 		return new WebTablePage(driver);
+	}
+
+	public ButtonPage ButtonTabClick() {
+
+		try {
+			Element_highlight(driver, button);
+			ScrollToView(driver, button);
+			ElementClick(driver, button);
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return new ButtonPage(driver);
+
+	}
+
+	public LinkPage LinkPageClick() {
+
+		try {
+			Element_highlight(driver, links);
+			ScrollToView(driver, links);
+			ElementClick(driver, links);
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return new LinkPage(driver);
 	}
 }
