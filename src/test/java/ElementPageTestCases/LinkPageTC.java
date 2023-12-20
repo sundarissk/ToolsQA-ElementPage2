@@ -32,7 +32,10 @@ public class LinkPageTC extends BrowserSetUp {
 		lp.createdClick();
 		lp.noContentClick();
 		lp.movedClick();
-		lp.badRequest();
+		lp.badRequestClick();
+		lp.unAuthorizedclick();
+		lp.forBiddenClick();
+		lp.notFoundClick();
 
 	}
 
